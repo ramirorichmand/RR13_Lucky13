@@ -80,3 +80,30 @@ class Board {
     this.tiles.push(res);
     return res;
   }
+
+  moveLeft() {
+    var hasChanged = false;
+    for (var row = 0; row < this.size; ++row) {
+      var currentRow = this.cells[row].filter((tile) => tile.value !== 0);
+      var resultRow = [];
+      for (var target = 0; target < this.size; ++target) {
+        var targetTile = currentRow.length
+          ? currentRow.shift()
+          : this.addTile();
+        if (currentRow.length > 0 && currentRow[0].value === targetTile.value) {
+          var tile1 = targetTile;
+          targetTile = this.addTile(targetTile.value);
+          tile1.mergedInto = targetTile;
+          var tile2 = currentRow.shift();
+          tile2.mergedInto = targetTile;
+          targetTile.value += tile2.value;
+          this.score += tile1.value + tile2.value;
+        }
+        resultRow[target] = targetTile;
+        this.won |= targetTile.value === 2048;
+        hasChanged |= targetTile.value !== this.cells[row][target].value;
+      }
+      this.cells[row] = resultRow;
+    }
+    return hasChanged;
+  }
