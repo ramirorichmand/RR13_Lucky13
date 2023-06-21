@@ -132,3 +132,19 @@ class Board {
     var newValue = Math.random() < this.fourProbability ? 4 : 2;
     this.cells[cell.r][cell.c] = this.addTile(newValue);
   }
+  move(direction) {
+    // 0 -> left, 1 -> up, 2 -> right, 3 -> down
+    this.clearOldTiles();
+    for (var i = 0; i < direction; ++i) {
+      this.cells = rotateLeft(this.cells);
+    }
+    var hasChanged = this.moveLeft();
+    for (let i = direction; i < 4; ++i) {
+      this.cells = rotateLeft(this.cells);
+    }
+    if (hasChanged) {
+      this.addRandomTile();
+    }
+    this.setPositions();
+    return this;
+  }
