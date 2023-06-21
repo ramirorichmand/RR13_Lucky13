@@ -118,3 +118,17 @@ class Board {
       });
     });
   }
+  addRandomTile() {
+    var emptyCells = [];
+    for (var r = 0; r < this.size; ++r) {
+      for (var c = 0; c < this.size; ++c) {
+        if (this.cells[r][c].value === 0) {
+          emptyCells.push({ r: r, c: c });
+        }
+      }
+    }
+    var index = ~~(Math.random() * emptyCells.length);
+    var cell = emptyCells[index];
+    var newValue = Math.random() < this.fourProbability ? 4 : 2;
+    this.cells[cell.r][cell.c] = this.addTile(newValue);
+  }
