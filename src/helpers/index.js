@@ -10,3 +10,14 @@ var rotateLeft = function (matrix) {
   }
   return res;
 };
+
+class Tile {
+  constructor(value, row, column) {
+    this.value = value || 0;
+    this.row = row || -1;
+    this.column = column || -1;
+    this.oldRow = -1;
+    this.oldColumn = -1;
+    this.markForDeletion = false;
+    this.mergedInto = null;
+    this.id = this.id++ || 0;
