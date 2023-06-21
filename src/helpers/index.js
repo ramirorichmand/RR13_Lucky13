@@ -107,3 +107,14 @@ class Board {
     }
     return hasChanged;
   }
+  setPositions() {
+    this.cells.forEach((row, rowIndex) => {
+      row.forEach((tile, columnIndex) => {
+        tile.oldRow = tile.row;
+        tile.oldColumn = tile.column;
+        tile.row = rowIndex;
+        tile.column = columnIndex;
+        tile.markForDeletion = false;
+      });
+    });
+  }
