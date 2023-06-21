@@ -21,3 +21,34 @@ class Tile {
     this.markForDeletion = false;
     this.mergedInto = null;
     this.id = this.id++ || 0;
+  }
+  moveTo(row, column) {
+    this.oldRow = this.row;
+    this.oldColumn = this.column;
+    this.row = row;
+    this.column = column;
+  }
+  isNew() {
+    return this.oldRow === -1 && !this.mergedInto;
+  }
+  hasMoved() {
+    return (
+      (this.fromRow() !== -1 &&
+        (this.fromRow() !== this.toRow() ||
+          this.fromColumn() !== this.toColumn())) ||
+      this.mergedInto
+    );
+  }
+  fromRow() {
+    return this.mergedInto ? this.row : this.oldRow;
+  }
+  fromColumn() {
+    return this.mergedInto ? this.column : this.oldColumn;
+  }
+  toRow() {
+    return this.mergedInto ? this.mergedInto.row : this.row;
+  }
+  toColumn() {
+    return this.mergedInto ? this.mergedInto.column : this.column;
+  }
+}
