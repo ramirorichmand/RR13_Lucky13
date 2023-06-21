@@ -172,3 +172,13 @@ class Board {
             newColumn >= this.size
           ) {
             continue;
+          }
+          canMove |=
+            this.cells[row][column].value ===
+            this.cells[newRow][newColumn].value;
+        }
+      }
+    }
+    return !canMove;
+  }
+}
