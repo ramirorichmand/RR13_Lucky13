@@ -148,3 +148,11 @@ class Board {
     this.setPositions();
     return this;
   }
+  clearOldTiles() {
+    this.tiles = this.tiles.filter((tile) => tile.markForDeletion === false);
+    this.tiles.forEach((tile) => {
+      tile.markForDeletion = true;
+    });
+  }
+  hasWon() {
+    return this.won;
