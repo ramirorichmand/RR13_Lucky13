@@ -182,3 +182,5 @@ class Board {
     return !canMove;
   }
 }
+
+export { Board };
