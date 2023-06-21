@@ -156,3 +156,19 @@ class Board {
   }
   hasWon() {
     return this.won;
+  }
+  hasLost() {
+    var canMove = false;
+    for (var row = 0; row < this.size; ++row) {
+      for (var column = 0; column < this.size; ++column) {
+        canMove |= this.cells[row][column].value === 0;
+        for (var dir = 0; dir < 4; ++dir) {
+          var newRow = row + this.deltaX[dir];
+          var newColumn = column + this.deltaY[dir];
+          if (
+            newRow < 0 ||
+            newRow >= this.size ||
+            newColumn < 0 ||
+            newColumn >= this.size
+          ) {
+            continue;
