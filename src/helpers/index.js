@@ -52,3 +52,31 @@ class Tile {
     return this.mergedInto ? this.mergedInto.column : this.column;
   }
 }
+
+class Board {
+  constructor() {
+    this.tiles = [];
+    this.cells = [];
+    this.score = 0;
+    this.size = 4;
+    this.fourProbability = 0.1;
+    this.deltaX = [-1, 0, 1, 0];
+    this.deltaY = [0, -1, 0, 1];
+    for (var i = 0; i < this.size; ++i) {
+      this.cells[i] = [
+        this.addTile(),
+        this.addTile(),
+        this.addTile(),
+        this.addTile(),
+      ];
+    }
+    this.addRandomTile();
+    this.addRandomTile();
+    this.setPositions();
+    this.won = false;
+  }
+  addTile(args) {
+    var res = new Tile(args);
+    this.tiles.push(res);
+    return res;
+  }
