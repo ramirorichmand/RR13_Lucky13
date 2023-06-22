@@ -45,3 +45,23 @@ const BoardView = () => {
     const resetGame = () => {
       setBoard(new Board());
     };
+
+    return (
+        <div>
+          <div className="details-box">
+            <div className="resetButton" onClick={resetGame}>
+              New Game
+            </div>
+            <div className="score-box">
+              <div className="score-header">POINTS</div>
+              <div>{board.score}</div>
+            </div>
+          </div>
+          <div className="board">
+            {cells}
+            {tiles}
+            <GameOverlay onRestart={resetGame} board={board} />
+          </div>
+        </div>
+      );
+    };
