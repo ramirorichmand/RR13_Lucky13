@@ -12,3 +12,12 @@ const App = () => (
   </div>
 );
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render 
+(
+  <>
+    <h1>Lucky 13</h1>
+    <App />
+  </>
+);
