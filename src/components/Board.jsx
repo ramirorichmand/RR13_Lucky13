@@ -23,3 +23,25 @@ const BoardView = () => {
         setBoard(newBoard);
       }
     };
+
+    useEvent("keydown", handleKeyDown);
+
+    const cells = board.cells.map((row, rowIndex) => {
+      return (
+        <div key={rowIndex}>
+          {row.map((col, colIndex) => {
+            return <Cell key={rowIndex * board.size + colIndex} />;
+          })}
+        </div>
+      );
+    });
+  
+    const tiles = board.tiles
+      .filter((tile) => tile.value !== 0)
+      .map((tile, index) => {
+        return <Tile tile={tile} key={index} />;
+      });
+  
+    const resetGame = () => {
+      setBoard(new Board());
+    };
