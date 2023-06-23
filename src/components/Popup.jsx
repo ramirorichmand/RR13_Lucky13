@@ -31,3 +31,4 @@ const MyModal = ({ closeModal }) => {
     );
   };
   
+  export default MyModal;
