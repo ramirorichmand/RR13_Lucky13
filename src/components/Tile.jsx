@@ -22,3 +22,4 @@ const Tile = ({ tile, id }) => {
   return <span className={classes}></span>;
 };
 
+export default Tile;
