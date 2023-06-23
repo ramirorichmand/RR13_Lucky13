@@ -22,3 +22,4 @@ const GameOverlay = ({ onRestart, board }) => {
   return null;
 };
 
+export default GameOverlay;
