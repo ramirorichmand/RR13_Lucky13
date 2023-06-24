@@ -22,3 +22,23 @@
     width: 440px;
     font-weight: bold;
   }
+  p{
+    width: 440px;
+    height: 440px;
+  }
+  .board {
+    order: 1;
+    width: 440px;
+    height: 440px;
+    padding: 5px;
+    background-color: #57407c;
+    border-radius: 7px;
+    outline: none;
+    position: relative;
+  }
+  
+  .board .cell,
+  .tile {
+    user-select: none;
+    cursor: default;
+  }
