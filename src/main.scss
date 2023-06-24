@@ -170,3 +170,33 @@
     width: 100px;
     background-image: url(./assets/img/try-again.gif);
   }
+
+  .tile {
+    position: absolute;
+  }
+  
+  .tile.merged {
+    display: none;
+  }
+  
+  .tile.merged.isMoving {
+    display: inline;
+  }
+  
+  .tile.new,
+  .overlay {
+    animation-duration: 0.2s;
+    animation-name: newTile;
+    animation-fill-mode: forwards;
+    animation-delay: 0.15s;
+    transform: scale(0);
+  }
+  
+  @keyframes newTile {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
