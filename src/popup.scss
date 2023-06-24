@@ -2,3 +2,19 @@
     font-family: "Clear Sans";
     src: url("../src/clear-sans.ttf") format("truetype");
 }
+
+h2{
+    text-align: center;
+    color: rgb(2, 0, 36);;
+    font-size: 2.4rem;
+    font-family: "Clear Sans", sans-serif;
+}
+
+p{
+    font-size: 1.2rem;
+    margin: 1rem 0 2.4rem 0;
+    line-height: 1.8rem;
+    color: rgb(2, 0, 36);;
+    font-weight: 400;
+    font-family: "Clear Sans", sans-serif;
+}
