@@ -42,3 +42,24 @@
     user-select: none;
     cursor: default;
   }
+
+  .details-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  
+  .resetButton {
+    background-color: #3d2963;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    &:hover {
+      background-color: #d3386a;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
