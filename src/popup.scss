@@ -32,3 +32,16 @@ p{
     background-color: rgba(195, 195, 195, 0.5);
     z-index: 99;
 }
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 50rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    z-index: 99;
+    padding: 0.5rem 3rem;
+    border-radius: 0.5rem;
+}
