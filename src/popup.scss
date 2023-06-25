@@ -18,3 +18,17 @@ p{
     font-weight: 400;
     font-family: "Clear Sans", sans-serif;
 }
+
+.container {
+    margin: 1rem;
+}
+
+.modal-wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(195, 195, 195, 0.5);
+    z-index: 99;
+}
