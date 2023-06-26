@@ -1,5 +1,5 @@
 import React from "react";
-import TryAgainLogo from "../assets/img/try-again.gif";
+import TryAgainLogo from "../assets/try-again.gif";
 const GameOverlay = ({ onRestart, board }) => {
   if (board.hasWon()) {
     return <div className="tile2048"></div>;
