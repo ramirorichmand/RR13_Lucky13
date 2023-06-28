@@ -3,7 +3,7 @@
 Welcome to Lucky 13, a personalised version of the famous 2048 game! In this exciting adaptation, I've attempted to make the game even more enjoyable. The name "Lucky 13" stems from the fact that incorporated are 13 unique strategies to conquer the game and achieve the elusive 2048 tile.
 
 ## 🕹️ Play the Game
-Are you ready to test your luck and skills? Embark on an adventure in Lucky 13 by visiting the following link: [Lucky 13 - 2048 Game](https://2048-game-react.netlify.app/)
+Are you ready to test your luck and skills? Embark on an adventure in Lucky 13 by visiting the following link: [Lucky 13 - 2048 Game](https://lucky13-ramiro.netlify.app/)
 
 ## 🛠️ Built With:
 
